@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import css from "./Modal.module.css";
 
+
 interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
@@ -17,7 +18,6 @@ export default function Modal({ onClose, children }: ModalProps) {
 
     document.addEventListener("keydown", handleEscape);
     document.body.style.overflow = "hidden";
-
     return () => {
       document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "";
@@ -35,7 +35,6 @@ export default function Modal({ onClose, children }: ModalProps) {
   if (typeof document === "undefined") {
     return null;
   }
-
   return createPortal(
     <div
       className={css.backdrop}

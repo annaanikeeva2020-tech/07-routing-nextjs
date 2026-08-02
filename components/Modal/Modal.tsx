@@ -48,3 +48,4 @@ export default function Modal({ onClose, children }: ModalProps) {
     document.body
   );
 }
+
